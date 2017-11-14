@@ -6,12 +6,18 @@ using System.Threading.Tasks;
 
 namespace Bazar
 {
-	class Program
+	class Bazar
 	{
-		static void Main(string[] args)
+		public Bazar()
 		{
-			Bazar bazar = new Bazar();
-			bazar.Init();
+		}
+
+		/// <summary>
+		/// Initializes the bazar
+		/// </summary>
+		public void Init()
+		{
+
 		}
 	}
 }

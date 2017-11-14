@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Bazar
 {
-	static class Output
+	public class Output
 	{
-        private Output _outPut;
+		private static Output _outPut;
         private Output() { }
 
         /// <summary>
