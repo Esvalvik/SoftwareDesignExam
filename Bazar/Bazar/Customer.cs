@@ -10,8 +10,8 @@ namespace Bazar
     class Customer
 	{
         #region Properties
-        public int ID { get; set; }
-	    public string Name { get; set; }
+        public int ID { get; private set; }
+	    public string Name { get; private set; }
 
 	    public List<BasicFood> OwnedItemsList { get; set; }
         #endregion
