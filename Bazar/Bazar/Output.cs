@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Bazar
 {
-	static class Output
+	public class Output
 	{
-        private Output _outPut;
+		private static Output _outPut;
         private Output() { }
 
         /// <summary>
         /// Returns the instance of Output
         /// </summary>
         /// <returns></returns>
-        public static Output getInstance()
+        public static Output GetInstance()
         {
             if (_outPut == null)
             {
