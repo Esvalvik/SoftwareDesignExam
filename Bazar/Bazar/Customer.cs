@@ -53,9 +53,10 @@ namespace Bazar
             OwnedItemsList.Add(basicfood);
 	    }
 
-	    public void ToString()
-	    {
-	    }
+		public string ToString()
+		{
+			return "";
+		}
 
 	    #endregion
     }
