@@ -29,7 +29,7 @@ namespace Bazar
         /// Outputs given text to given outputplace yo
         /// </summary>
         /// <param name="text"></param>
-        public static void Write(string text)
+        public void Write(string text)
         {
             if (text == null) { return; }
             Console.WriteLine(text);

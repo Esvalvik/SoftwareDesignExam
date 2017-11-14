@@ -42,8 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bazar.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="Decorator\BasicFood.cs" />
+    <Compile Include="Decorator\DecoratorFoodCorn.cs" />
+    <Compile Include="Decorator\FoodDecorator.cs" />
+    <Compile Include="Decorator\IFood.cs" />
+    <Compile Include="Output.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shop\Item.cs" />
+    <Compile Include="Shop\ItemFactory.cs" />
+    <Compile Include="Shop\Shop.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
