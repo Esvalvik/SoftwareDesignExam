@@ -47,16 +47,16 @@ namespace Bazar
         /// Adds the given item to the customers OwnedItemsList
         /// </summary>
         /// <param name="basicfood"></param>
-	    public void BuyItem(BasicFood basicfood)
+	    public void ReceiveItem(BasicFood basicfood)
 	    {
 	        if (basicfood == null){ return; }
             OwnedItemsList.Add(basicfood);
 	    }
 
-		public string ToString()
-		{
-			return "";
-		}
+	    public override string ToString()
+	    {
+	        return ID + ":" + Name;
+	    }
 
 	    #endregion
     }
