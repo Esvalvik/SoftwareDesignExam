@@ -32,5 +32,31 @@ namespace Bazar
 	    }
         #endregion
 
+	    #region Methods
+
+        /// <summary>
+        /// Returns an array with the customers purchased items
+        /// </summary>
+        /// <returns></returns>
+	    public Basicfood[] FetchItems()
+	    {
+	        return OwnedItemsList.ToArray();
+	    }
+
+        /// <summary>
+        /// Adds the given item to the customers OwnedItemsList
+        /// </summary>
+        /// <param name="basicfood"></param>
+	    public void BuyItem(Basicfood basicfood)
+	    {
+	        if (basicfood == null){ return; }
+            OwnedItemsList.Add(basicfood);
+	    }
+
+	    public void ToString()
+	    {
+	    }
+
+	    #endregion
     }
 }
