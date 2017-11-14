@@ -10,6 +10,7 @@ namespace Bazar
 	{
 		static void Main(string[] args)
 		{
+            
 		}
 	}
 }
