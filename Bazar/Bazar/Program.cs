@@ -12,6 +12,7 @@ namespace Bazar
 		{
 			Bazar bazar = new Bazar();
 			bazar.Init();
+		    Console.ReadKey();
 		}
 	}
 }

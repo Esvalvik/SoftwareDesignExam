@@ -8,8 +8,10 @@ namespace Bazar
 {
 	class Bazar
 	{
+	    private Output _out;
 		public Bazar()
 		{
+		    _out = Output.GetInstance();
 		}
 
 		/// <summary>
@@ -17,7 +19,7 @@ namespace Bazar
 		/// </summary>
 		public void Init()
 		{
-
+            _out.Write("Hello from init");
 		}
 	}
 }
