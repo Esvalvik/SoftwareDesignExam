@@ -15,7 +15,7 @@ namespace Bazar
         /// Returns the instance of Output
         /// </summary>
         /// <returns></returns>
-        public static Output getInstance()
+        public static Output GetInstance()
         {
             if (_outPut == null)
             {
