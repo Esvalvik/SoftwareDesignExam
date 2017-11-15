@@ -12,7 +12,7 @@ namespace Bazar
         private Output() { }
 
         /// <summary>
-        /// Returns the instance of Output
+        /// Returns the instance of Output, creates a new instance if an instance doesn't exist
         /// </summary>
         /// <returns></returns>
         public static Output GetInstance()
@@ -26,7 +26,7 @@ namespace Bazar
         }
 
         /// <summary>
-        /// Outputs given text to given outputplace yo
+        /// Outputs text to command window
         /// </summary>
         /// <param name="text"></param>
         public void Write(string text)

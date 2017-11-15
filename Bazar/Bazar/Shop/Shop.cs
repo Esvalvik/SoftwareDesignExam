@@ -54,7 +54,7 @@ namespace Bazar
 		{
 			if((System.DateTime.Now.Millisecond - _lastTime) >= _itemCreationDelay)
 			{
-				// TODO: Create and add new item
+				//Item newItem = ItemFactory.CreateItem(_rnd.Next(0, 9);
 				UpdateTime();
 			}
 		}
@@ -64,6 +64,7 @@ namespace Bazar
 			_lastTime = System.DateTime.Now.Millisecond;
 			_itemCreationDelay = _rnd.Next(_minValue, _maxValue);
 		}
+
 
 		#endregion
 	}

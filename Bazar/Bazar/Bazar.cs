@@ -9,9 +9,11 @@ namespace Bazar
 	class Bazar
 	{
 	    private Output _out;
+		private List<Shop> _shops;
 		public Bazar()
 		{
 		    _out = Output.GetInstance();
+			_shops = new List<Shop>();
 		}
 
 		/// <summary>
@@ -20,6 +22,11 @@ namespace Bazar
 		public void Init()
 		{
             _out.Write("Hello from init");
+		}
+
+		public void Update()
+		{
+			
 		}
 	}
 }

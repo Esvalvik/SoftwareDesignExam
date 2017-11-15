@@ -53,6 +53,10 @@ namespace Bazar
             OwnedItemsList.Add(basicfood);
 	    }
 
+		/// <summary>
+		/// Returns the object as a string
+		/// </summary>
+		/// <returns></returns>
 	    public override string ToString()
 	    {
 	        return ID + ":" + Name;
