@@ -13,14 +13,14 @@ namespace Bazar
 			Bazar bazar = new Bazar();
 			bazar.Init();
 
-            IFood chicken = new BasicFood(0, "Chicken", 30.4f);
-            IFood superChciken = new DecoratorFoodRawSauce(chicken);
-            IFood superduperchicken = new DecoratorFoodFries(superChciken);
+		    for (int i = 0; i < 50; i++)
+		    {
+		        IFood superduperchicken = ItemFactory.GetRandomDecoratedFood(0);
+		        Console.WriteLine("Food: " + superduperchicken.GetDescription() + " Price: " + superduperchicken.GetPrice() + "kr.");
+            }
 
-            Console.WriteLine("Food: " + superduperchicken.GetDescription() + " Price: " + superduperchicken.GetPrice() + "kr.");
 
-
-		    Console.ReadKey();
+            Console.ReadKey();
 		}
 	}
 }

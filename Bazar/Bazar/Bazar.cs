@@ -26,7 +26,11 @@ namespace Bazar
 
 		public void Update()
 		{
-			
+		    while (true)
+		    {
+                //TODO: Add delay
+                //Foreverlooop
+            }
 		}
 	}
 }

@@ -55,6 +55,7 @@ namespace Bazar
 			if((System.DateTime.Now.Millisecond - _lastTime) >= _itemCreationDelay)
 			{
 				//Item newItem = ItemFactory.CreateItem(_rnd.Next(0, 9);
+			    //Shop.addtolist = ItemFactory.GetRandomDecoratedFood(/*ID:*/0);
 				UpdateTime();
 			}
 		}
