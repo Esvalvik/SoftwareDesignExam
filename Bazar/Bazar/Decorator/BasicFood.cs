@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Bazar
 {
-    class BasicFood : IFood
+    public class BasicFood : IFood
     {
         private readonly int _id;
         private readonly string _description;
         private readonly float _price;
 
-        BasicFood(int id, string description, float price)
+        public BasicFood(int id, string description, float price)
         {
             _id = id;
             _description = description;

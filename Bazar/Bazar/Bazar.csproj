@@ -45,6 +45,9 @@
     <Compile Include="Bazar.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Decorator\BasicFood.cs" />
+    <Compile Include="Decorator\DecoratorFoodFries.cs" />
+    <Compile Include="Decorator\DecoratorFoodRawSauce.cs" />
+    <Compile Include="Decorator\DecoratorFoodRice.cs" />
     <Compile Include="Decorator\DecoratorFoodCorn.cs" />
     <Compile Include="Decorator\FoodDecorator.cs" />
     <Compile Include="Decorator\IFood.cs" />
