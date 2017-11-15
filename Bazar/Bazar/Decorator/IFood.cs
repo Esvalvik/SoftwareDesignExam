@@ -8,5 +8,8 @@ namespace Bazar
 {
 	interface IFood
 	{
+	    int GetId();
+	    string GetDescription();
+	    float GetPrice();
 	}
 }

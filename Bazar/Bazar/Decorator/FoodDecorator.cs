@@ -6,7 +6,32 @@ using System.Threading.Tasks;
 
 namespace Bazar
 {
-	class FoodDecorator
-	{
-	}
+    abstract class FoodDecorator : IFood
+    {
+        private readonly IFood _iFoodOriginal;
+        protected FoodDecorator(IFood iFoodOriginal)
+        {
+            _iFoodOriginal = iFoodOriginal;
+        }
+
+        public virtual string GetDescription()
+        {
+            return _iFoodOriginal.GetDescription();
+        }
+
+        public virtual int GetId()
+        {
+            return _iFoodOriginal.GetId();
+        }
+
+        public virtual string GetName()
+        {
+            return _iFoodOriginal.GetName();
+        }
+
+        public virtual float GetPrice()
+        {
+            return _iFoodOriginal.GetPrice();
+        }
+    }
 }
