@@ -11,15 +11,17 @@ namespace Bazar
 {
 	class Bazar
 	{
-	    private readonly Object _lock;
+	    #region Fields
+        private readonly Object _lock;
 	    private Output _out;
 		private ArrayList _shops;
 	    private ArrayList _customers;
 	    private bool _bazaarRunning = true;
 	    private Stopwatch _stopwatch;
 	    private long _updateDelayInMillis = 100;
-            
-		public Bazar()
+        #endregion
+
+        public Bazar()
 		{
 		    _out = Output.GetInstance();
 			_shops = new ArrayList();
@@ -28,10 +30,11 @@ namespace Bazar
 		    _lock = new Object();
 		}
 
-		/// <summary>
-		/// Initializes the bazar
-		/// </summary>
-		public void Init()
+	    #region Methods
+        /// <summary>
+        /// Initializes the bazar
+        /// </summary>
+        public void Init()
 		{
             _out.Write("Hello from init");
 
@@ -82,7 +85,10 @@ namespace Bazar
 		        _stopwatch.Restart();
             }
 		}
-
+        /// <summary>
+        /// Makes a customer go through the market searching for food items
+        /// </summary>
+        /// <param name="customer"></param>
 	    private void CustomerSearchForFood(Customer customer)
 	    {
 	        if (customer == null)
@@ -117,5 +123,6 @@ namespace Bazar
                 _out.Write(customer.Name + " has bought " + soldItem.GetDescription() + " for " + soldItem.GetPrice() + "kr. From " + shop.Name);
             }
         }
-	}
+	    #endregion
+    }
 }

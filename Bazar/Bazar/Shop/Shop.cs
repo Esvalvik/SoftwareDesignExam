@@ -17,45 +17,59 @@ namespace Bazar
 
 		private readonly int MIN_VALUE = 1000;
 		private readonly int MAX_VALUE = 5000;
-	    private readonly int MAX_ITEMS = 2;
+	    private readonly int MAX_ITEMS = 100;
 	    private int _createdItemsCount = 0;
 
         private ArrayList _availableItems;
 
 	    private DateTime _dateTime;
-		private Random _rnd = new Random();
+	    private Random _rnd;
+	    private Output _out;
 
 		private double _lastTime;
 		private long _itemCreationDelay;
 		#endregion
 
 		#region Constructors
-		public Shop()
+		/*public Shop()
 		{
 			ID = 0;
 			Name = "Unnamed";
 			_availableItems = new ArrayList();
             _dateTime = new DateTime(1970, 1, 1);
-			UpdateTime();
+            _rnd = new Random();;
+            UpdateTime();
 		}
-
+        */
 		public Shop(int id, string name)
 		{
 			ID = id;
 			Name = name;
 			_availableItems = new ArrayList();
-		    _dateTime = new DateTime(1970, 1, 1); ;
+		    _dateTime = new DateTime(1970, 1, 1);
+            _rnd = new Random();
+		    _out = Output.GetInstance();
             UpdateTime();
 		}
 		#endregion
 
 		#region Methods
 
+        /// <summary>
+        /// Adds given item to the available array
+        /// </summary>
+        /// <param name="item"></param>
 		private void AddItem(IFood item)
 		{
 			_availableItems.Add(item);
+            _out.Write(Name + " put " + item.GetDescription() + " up for sale!");
 		}
 
+        /// <summary>
+        /// Returns item from index and removes it from available array
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
 	    public IFood SellItem(int index)
 	    {
 	        IFood soldItem = (IFood) _availableItems[index];
@@ -63,6 +77,10 @@ namespace Bazar
 	        return soldItem;
 	    }
 
+        /// <summary>
+        /// Returns an array of available items
+        /// </summary>
+        /// <returns></returns>
 	    public IFood[] GetAvailableItems()
 	    {
 	        return (IFood[]) _availableItems.ToArray();
@@ -77,11 +95,14 @@ namespace Bazar
 	        return _availableItems.Count > 0 ? true : false;
 	    }
 
+        /// <summary>
+        /// Shops update loop, creating new items after random interval
+        /// </summary>
 	    public void Update()
 		{
 		    if (_createdItemsCount < MAX_ITEMS)
             { 
-                if ( (GetTimeInMillis() - _lastTime) >= _itemCreationDelay)
+                if ((GetTimeInMillis() - _lastTime) >= _itemCreationDelay)
 		        {
 		            AddItem(ItemFactory.GetRandomDecoratedFood());
 		            _createdItemsCount++;

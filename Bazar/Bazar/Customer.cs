@@ -17,13 +17,13 @@ namespace Bazar
         #endregion
 
         #region Constructors
-	    public Customer()
+	   /* public Customer()
 	    {
 	        ID = 0;
 	        Name = "Unnamed";
 	        OwnedItemsList = new List<IFood>();
 	    }
-
+        */
 	    public Customer(int id, string name)
 	    {
 	        ID = id;
