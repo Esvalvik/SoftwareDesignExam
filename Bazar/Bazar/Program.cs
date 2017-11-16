@@ -13,13 +13,6 @@ namespace Bazar
 			Bazar bazar = new Bazar();
 			bazar.Init();
 
-		    for (int i = 0; i < 50; i++)
-		    {
-		        IFood superduperchicken = ItemFactory.GetRandomDecoratedFood(0);
-		        Console.WriteLine("Food: " + superduperchicken.GetDescription() + " Price: " + superduperchicken.GetPrice() + "kr.");
-            }
-
-
             Console.ReadKey();
 		}
 	}
