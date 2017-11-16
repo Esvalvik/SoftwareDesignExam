@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,7 @@ namespace Bazar
 		private const int _minValue = 1000;
 		private const int _maxValue = 5000;
 
-		private List<Item> _availableItems;
+		private ArrayList _availableItems;
 
 		private Random _rnd = new Random();
 
@@ -30,7 +31,7 @@ namespace Bazar
 		{
 			ID = 0;
 			Name = "Unnamed";
-			_availableItems = new List<Item>();
+			_availableItems = new ArrayList();
 			UpdateTime();
 		}
 
@@ -38,19 +39,31 @@ namespace Bazar
 		{
 			ID = id;
 			Name = name;
-			_availableItems = new List<Item>();
+			_availableItems = new ArrayList();
 			UpdateTime();
 		}
 		#endregion
 
 		#region Methods
 
-		private void AddItem(Item item)
+		private void AddItem(IFood item)
 		{
 			_availableItems.Add(item);
 		}
 
-		public void Update()
+	    public IFood SellItem(int index)
+	    {
+	        IFood soldItem = (IFood) _availableItems[index];
+            _availableItems.RemoveAt(index);
+	        return soldItem;
+	    }
+
+	    public IFood[] GetAvailableItems()
+	    {
+	        return (IFood[]) _availableItems.ToArray();
+	    }
+
+	    public void Update()
 		{
 			if((System.DateTime.Now.Millisecond - _lastTime) >= _itemCreationDelay)
 			{
