@@ -9,8 +9,7 @@ namespace Bazar
 	class ItemFactory
 	{
 	    private static Random _random;
-	    private static readonly string[] itemNames = { "Chicken", "Lam", "Steak", "Pork" };
-	    private static readonly float[] itemPrices = { 30f, 23f, 100f, 45f };
+	    
 	    static ItemFactory()
 	    {
 	        _random = new Random();
@@ -87,9 +86,9 @@ namespace Bazar
 	   public static IFood GetRandomDecoratedFood()
 	    {
             //TODO: Clean up make code
-	        int randomIndex = _random.Next(0, itemNames.Length - 1);
-            string name = itemNames[randomIndex];
-	        float price = itemPrices[randomIndex];
+	        int randomIndex = _random.Next(0, StaticData.itemNames.Length - 1);
+            string name = StaticData.itemNames[randomIndex];
+	        float price = StaticData.itemPrices[randomIndex];
             IFood originalFood = new BasicFood( name, price);
 
 	        for (int i = 0; i < _random.Next(0, 5); i++)
