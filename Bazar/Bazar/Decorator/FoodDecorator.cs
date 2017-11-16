@@ -19,11 +19,6 @@ namespace Bazar
             return _iFoodOriginal.GetDescription();
         }
 
-        public virtual int GetId()
-        {
-            return _iFoodOriginal.GetId();
-        }
-
         public virtual float GetPrice()
         {
             return _iFoodOriginal.GetPrice();

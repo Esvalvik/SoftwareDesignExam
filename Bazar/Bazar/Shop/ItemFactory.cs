@@ -23,9 +23,9 @@ namespace Bazar
         /// <param name="name"></param>
         /// <param name="price"></param>
         /// <returns></returns>
-	    public static IFood GetBasicFood(int id, string name, float price)
+	    public static IFood GetBasicFood(string name, float price)
 	    {
-            return new BasicFood(id, name, price);
+            return new BasicFood(name, price);
 	    }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace Bazar
         /// <returns></returns>
 	    public static IFood GetBasicFoodWithCorn(int id, string name, float price)
 	    {
-            IFood originalFood = new BasicFood(id, name, price);
+            IFood originalFood = new BasicFood(name, price);
             return new DecoratorFoodCorn(originalFood);
 	    }
 	    /// <summary>
@@ -47,9 +47,9 @@ namespace Bazar
 	    /// <param name="name"></param>
 	    /// <param name="price"></param>
 	    /// <returns></returns>
-	    public static IFood GetBasicFoodWithRice(int id, string name, float price)
+	    public static IFood GetBasicFoodWithRice(string name, float price)
 	    {
-	        IFood originalFood = new BasicFood(id, name, price);
+	        IFood originalFood = new BasicFood(name, price);
 	        return new DecoratorFoodRice(originalFood);
 	    }
 
@@ -84,13 +84,13 @@ namespace Bazar
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-	   public static IFood GetRandomDecoratedFood(int id)
+	   public static IFood GetRandomDecoratedFood()
 	    {
             //TODO: Clean up make code
 	        int randomIndex = _random.Next(0, itemNames.Length - 1);
             string name = itemNames[randomIndex];
 	        float price = itemPrices[randomIndex];
-            IFood originalFood = new BasicFood(id, name, price);
+            IFood originalFood = new BasicFood( name, price);
 
 	        for (int i = 0; i < _random.Next(0, 5); i++)
 	        {

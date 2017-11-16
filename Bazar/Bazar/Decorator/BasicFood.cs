@@ -8,13 +8,11 @@ namespace Bazar
 {
     public class BasicFood : IFood
     {
-        private readonly int _id;
         private readonly string _description;
         private readonly float _price;
 
-        public BasicFood(int id, string description, float price)
+        public BasicFood(string description, float price)
         {
-            _id = id;
             _description = description;
             _price = price;
         }
@@ -23,12 +21,7 @@ namespace Bazar
         {
             return _description;
         }
-
-        public int GetId()
-        {
-            return _id;
-        }
-
+        
         public float GetPrice()
         {
             return _price;

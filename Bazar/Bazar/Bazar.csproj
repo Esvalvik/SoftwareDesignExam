@@ -51,7 +51,6 @@
     <Compile Include="Decorator\DecoratorFoodCorn.cs" />
     <Compile Include="Decorator\FoodDecorator.cs" />
     <Compile Include="Decorator\IFood.cs" />
-    <Compile Include="Shop\Item.cs" />
     <Compile Include="Shop\ItemFactory.cs" />
     <Compile Include="Output.cs" />
     <Compile Include="Program.cs" />

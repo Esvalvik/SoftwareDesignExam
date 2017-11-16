@@ -41,7 +41,7 @@ namespace Bazar
 		    {
                 if(_stopwatch.ElapsedMilliseconds < _updateDelayInMillis) { continue; }
 
-                IFood superduperchicken = ItemFactory.GetRandomDecoratedFood(0);
+                IFood superduperchicken = ItemFactory.GetRandomDecoratedFood();
 		        Console.WriteLine("Food: " + superduperchicken.GetDescription() + " Price: " + superduperchicken.GetPrice() + "kr.");
                 
                 _stopwatch.Restart();
