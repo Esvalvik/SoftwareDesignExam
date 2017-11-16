@@ -35,7 +35,7 @@ namespace Bazar
         /// <param name="name"></param>
         /// <param name="price"></param>
         /// <returns></returns>
-	    public static IFood GetBasicFoodWithCorn(int id, string name, float price)
+	    public static IFood GetBasicFoodWithCorn(string name, float price)
 	    {
             IFood originalFood = new BasicFood(name, price);
             return new DecoratorFoodCorn(originalFood);
@@ -60,9 +60,9 @@ namespace Bazar
 	    /// <param name="name"></param>
 	    /// <param name="price"></param>
 	    /// <returns></returns>
-	    public static IFood GetBasicFoodWithRawSauce(int id, string name, float price)
+	    public static IFood GetBasicFoodWithRawSauce(string name, float price)
 	    {
-	        IFood originalFood = new BasicFood(id, name, price);
+	        IFood originalFood = new BasicFood(name, price);
 	        return new DecoratorFoodRawSauce(originalFood);
 	    }
 
@@ -73,9 +73,9 @@ namespace Bazar
 	    /// <param name="name"></param>
 	    /// <param name="price"></param>
 	    /// <returns></returns>
-	    public static IFood GetBasicFoodWithFries(int id, string name, float price)
+	    public static IFood GetBasicFoodWithFries(string name, float price)
 	    {
-	        IFood originalFood = new BasicFood(id, name, price);
+	        IFood originalFood = new BasicFood(name, price);
 	        return new DecoratorFoodFries(originalFood);
 	    }
 

@@ -13,7 +13,7 @@ namespace Bazar
         public int ID { get; private set; }
 	    public string Name { get; private set; }
 
-	    public List<BasicFood> OwnedItemsList { get; set; }
+	    public List<IFood> OwnedItemsList { get; set; }
         #endregion
 
         #region Constructors
@@ -21,14 +21,14 @@ namespace Bazar
 	    {
 	        ID = 0;
 	        Name = "Unnamed";
-	        OwnedItemsList = new List<BasicFood>();
+	        OwnedItemsList = new List<IFood>();
 	    }
 
 	    public Customer(int id, string name)
 	    {
 	        ID = id;
 	        Name = name;
-	        OwnedItemsList = new List<BasicFood>();
+	        OwnedItemsList = new List<IFood>();
 	    }
         #endregion
 
@@ -38,7 +38,7 @@ namespace Bazar
         /// Returns an array with the customers purchased items
         /// </summary>
         /// <returns></returns>
-	    public BasicFood[] FetchItems()
+	    public IFood[] FetchItems()
 	    {
 	        return OwnedItemsList.ToArray();
 	    }
@@ -47,7 +47,7 @@ namespace Bazar
         /// Adds the given item to the customers OwnedItemsList
         /// </summary>
         /// <param name="basicfood"></param>
-	    public void ReceiveItem(BasicFood basicfood)
+	    public void ReceiveItem(IFood basicfood)
 	    {
 	        if (basicfood == null){ return; }
             OwnedItemsList.Add(basicfood);
