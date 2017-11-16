@@ -11,8 +11,9 @@ namespace Bazar
 	    private static Random _random;
 	    private static readonly string[] itemNames = { "Chicken", "Lam", "Steak", "Pork" };
 	    private static readonly float[] itemPrices = { 30f, 23f, 100f, 45f };
-	    private ItemFactory()
+	    static ItemFactory()
 	    {
+	        _random = new Random();
 	    }
 
 	    public static IFood GetBasicFood(int id, string name, float price)
@@ -46,9 +47,9 @@ namespace Bazar
 	   public static IFood GetRandomDecoratedFood(int id)
 	    {
             //TODO: Clean up make code
-	        _random = new Random();
-            string name = itemNames[_random.Next(0, itemNames.Length - 1)];
-	        float price = itemPrices[_random.Next(0, itemPrices.Length - 1)];
+	        int randomIndex = _random.Next(0, itemNames.Length - 1);
+            string name = itemNames[randomIndex];
+	        float price = itemPrices[randomIndex];
             IFood originalFood = new BasicFood(id, name, price);
 
 	        for (int i = 0; i < _random.Next(0, 5); i++)

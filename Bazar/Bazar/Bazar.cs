@@ -10,6 +10,7 @@ namespace Bazar
 	{
 	    private Output _out;
 		private List<Shop> _shops;
+	    private bool _bazaarRunning = true;
 		public Bazar()
 		{
 		    _out = Output.GetInstance();
@@ -26,7 +27,7 @@ namespace Bazar
 
 		public void Update()
 		{
-		    while (true)
+		    while (_bazaarRunning)
 		    {
                 //TODO: Add delay
                 //Foreverlooop
