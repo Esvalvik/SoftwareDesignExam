@@ -15,8 +15,9 @@ namespace Bazar
 
 		public string Name { get; private set; }
 
-		private const int _minValue = 1000;
-		private const int _maxValue = 5000;
+		private readonly int MIN_VALUE = 1000;
+		private readonly int MAX_VALUE = 5000;
+	    private readonly int MAX_ITEMS = 2;
 	    private int _createdItemsCount = 0;
 
         private ArrayList _availableItems;
@@ -78,7 +79,7 @@ namespace Bazar
 
 	    public void Update()
 		{
-		    if (_createdItemsCount <= 5)
+		    if (_createdItemsCount < MAX_ITEMS)
             { 
                 if ( (GetTimeInMillis() - _lastTime) >= _itemCreationDelay)
 		        {
@@ -95,7 +96,7 @@ namespace Bazar
 		private void UpdateTime()
 		{
 		    _lastTime = GetTimeInMillis();
-            _itemCreationDelay = _rnd.Next(_minValue, _maxValue);
+            _itemCreationDelay = _rnd.Next(MIN_VALUE, MAX_VALUE);
 		}
 
         /// <summary>

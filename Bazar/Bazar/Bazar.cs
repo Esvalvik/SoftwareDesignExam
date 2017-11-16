@@ -83,7 +83,6 @@ namespace Bazar
             }
 		}
 
-
 	    private void CustomerSearchForFood(Customer customer)
 	    {
 	        if (customer == null)
