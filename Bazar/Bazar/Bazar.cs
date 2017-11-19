@@ -16,9 +16,11 @@ namespace Bazar
 	    private Output _out;
 		private ArrayList _shops;
 	    private ArrayList _customers;
-	    private bool _bazaarRunning = true;
 	    private Stopwatch _stopwatch;
+	    private Random _rnd;
 	    private long _updateDelayInMillis = 100;
+	    private bool _bazaarRunning = true;
+
         #endregion
 
         public Bazar()
@@ -28,6 +30,7 @@ namespace Bazar
 		    _customers = new ArrayList();
 		    _stopwatch = new Stopwatch();
 		    _lock = new Object();
+            _rnd = new Random();
 		}
 
 	    #region Methods
@@ -78,7 +81,9 @@ namespace Bazar
                     });
 		        }
 
-		        foreach (Thread thread in customerThreads)
+                // Shuffle the thread array before starting threads
+		        customerThreads = customerThreads.OrderBy(x => _rnd.Next()).ToArray();
+                foreach (Thread thread in customerThreads)
 		        {
 		            thread.Start();
 		        }
