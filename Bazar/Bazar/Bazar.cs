@@ -13,13 +13,16 @@ namespace Bazar
 	{
 	    #region Fields
         private readonly Object _lock;
-	    private Output _out;
-		private ArrayList _shops;
-	    private ArrayList _customers;
-	    private Stopwatch _stopwatch;
-	    private Random _rnd;
-	    private long _updateDelayInMillis = 100;
-	    private bool _bazaarRunning = true;
+	    private readonly Output _out;
+		private readonly ArrayList _shops;
+	    private readonly ArrayList _customers;
+	    private readonly Stopwatch _stopwatch;
+	    private readonly Random _rnd;
+
+	    private readonly long _updateDelayInMillis = 100;
+	    private readonly int _amountCustomers = 5;
+	    private readonly int _amountShops = 5;
+        private bool _bazaarRunning = true;
 
         #endregion
 
@@ -39,14 +42,14 @@ namespace Bazar
         /// </summary>
         public void Init()
 		{
-		    for (int i = 0; i < 5; i++)
+		    for (int i = 0; i < _amountShops; i++)
 		    {
-                _shops.Add(new Shop(i, "Shop_" + i));
+                _shops.Add(new Shop(i, StaticData.shopNames[_rnd.Next(0, StaticData.shopNames.Length-1)]));
 		    }
 
-		    for (int i = 0; i < 5; i++)
+		    for (int i = 0; i < _amountCustomers; i++)
 		    {
-		        _customers.Add(new Customer(i, "Alibaba_" + i));
+		        _customers.Add(new Customer(i, StaticData.customerNames[_rnd.Next(0, StaticData.customerNames.Length - 1)]));
 		    }
 
             _stopwatch.Start();
