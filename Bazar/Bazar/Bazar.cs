@@ -39,8 +39,6 @@ namespace Bazar
         /// </summary>
         public void Init()
 		{
-            _out.Write("Hello from init");
-
 		    for (int i = 0; i < 5; i++)
 		    {
                 _shops.Add(new Shop(i, "Shop_" + i));
