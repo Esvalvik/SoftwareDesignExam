@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bazar
 {
-	interface IFood
+	public interface IFood
 	{
 	    string GetDescription();
 	    float GetPrice();

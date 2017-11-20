@@ -24,7 +24,7 @@ namespace Bazar
         
         public float GetPrice()
         {
-            return _price;
+            return (float)_price;
         }
     }
 }

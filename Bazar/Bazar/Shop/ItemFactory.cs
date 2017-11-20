@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bazar
 {
-	class ItemFactory
+	public class ItemFactory
 	{
 	    private static Random _random;
 	    
