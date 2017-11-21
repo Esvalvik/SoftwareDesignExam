@@ -17,14 +17,14 @@ namespace Bazar
 
 		private readonly int MIN_VALUE = 1000;
 		private readonly int MAX_VALUE = 5000;
-	    private readonly int MAX_ITEMS = 100;
+	    private readonly int MAX_ITEMS = 5;
 	    private int _createdItemsCount = 0;
 
-        private ArrayList _availableItems;
+        private readonly ArrayList _availableItems;
 
 	    private DateTime _dateTime;
-	    private Random _rnd;
-	    private Output _out;
+	    private readonly Random _rnd;
+	    private readonly Output _out;
 
 		private double _lastTime;
 		private long _itemCreationDelay;

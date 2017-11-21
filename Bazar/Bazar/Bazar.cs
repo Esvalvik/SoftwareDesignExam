@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Bazar
 {
-	class Bazar
+	public class Bazar
 	{
 	    #region Fields
         private readonly Object _lock;
@@ -23,7 +23,6 @@ namespace Bazar
 	    private readonly int _amountCustomers = 5;
 	    private readonly int _amountShops = 5;
         private bool _bazaarRunning = true;
-
         #endregion
 
         public Bazar()
@@ -126,7 +125,7 @@ namespace Bazar
 
                 IFood soldItem = shop.SellItem(0);
                 customer.ReceiveItem(soldItem);
-                _out.Write(customer.Name + " has bought " + soldItem.GetDescription() + " for " + soldItem.GetPrice() + "kr. From " + shop.Name);
+                _out.Write("\t" + customer.Name + " has bought " + soldItem.GetDescription() + " for " + soldItem.GetPrice() + "kr. From " + shop.Name);
             }
         }
 	    #endregion
