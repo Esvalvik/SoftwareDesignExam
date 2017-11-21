@@ -32,14 +32,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bazar.cs" />
@@ -51,6 +59,9 @@
     <Compile Include="Decorator\DecoratorFoodCorn.cs" />
     <Compile Include="Decorator\FoodDecorator.cs" />
     <Compile Include="Decorator\IFood.cs" />
+    <Compile Include="GUIBazar.xaml.cs">
+      <DependentUpon>GUIBazar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Shop\ItemFactory.cs" />
     <Compile Include="Output.cs" />
     <Compile Include="Program.cs" />
@@ -61,6 +72,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="GUIBazar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
