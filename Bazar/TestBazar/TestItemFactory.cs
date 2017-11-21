@@ -11,8 +11,8 @@ namespace TestBazar
 		public void TestGetBasicFood()
 		{
 			IFood food = ItemFactory.GetBasicFood("Steak", 32.5f);
-			Assert.AreEqual(food.GetPrice(), 32.5f);
-			Assert.AreEqual(food.GetDescription(), "Steak");
+			Assert.AreEqual(32.5f, food.GetPrice());
+			Assert.AreEqual("Steak", food.GetDescription());
 		}
 
 		[Test]

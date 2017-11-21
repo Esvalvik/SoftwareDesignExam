@@ -1,25 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Bazar
+﻿namespace Bazar
 {
-	class DecoratorFoodCorn : FoodDecorator
-	{
-	    public DecoratorFoodCorn(IFood iFoodOriginal) : base(iFoodOriginal)
-	    {
-	    }
+    internal class DecoratorFoodCorn : FoodDecorator
+    {
+        public DecoratorFoodCorn(IFood iFoodOriginal) : base(iFoodOriginal)
+        {
+        }
 
-	    public override string GetDescription()
-	    {
-	        return base.GetDescription() + " and corn";
-	    }
+        public override string GetDescription()
+        {
+            return base.GetDescription() + " and corn";
+        }
 
-	    public override float GetPrice()
-	    {
-	        return base.GetPrice() + 8.5f;
-	    }
+        public override float GetPrice()
+        {
+            return base.GetPrice() + 8.5f;
+        }
     }
 }

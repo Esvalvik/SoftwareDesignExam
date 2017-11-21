@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Bazar
 {
-	class Program
-	{
-		static void Main(string[] args)
-		{
-			Bazar bazar = new Bazar();
-			bazar.Init();
+    internal class Program
+    {
+        private static void Main(string[] args)
+        {
+            var bazar = new Bazar();
+            bazar.Init();
 
             Console.ReadKey();
-		}
-	}
+        }
+    }
 }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Bazar
+﻿namespace Bazar
 {
     public class BasicFood : IFood
     {
@@ -21,10 +15,10 @@ namespace Bazar
         {
             return _description;
         }
-        
+
         public float GetPrice()
         {
-            return (float)_price;
+            return _price;
         }
     }
 }
