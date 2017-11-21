@@ -1,14 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Bazar.Bazar">
+    <Position X="13.25" Y="2" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AQQIAAAAAgAEAIAgCAAAAAABAAAABEAAAAACCAAABAA=</HashCode>
+      <FileName>Bazar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="Bazar.Customer">
-    <Position X="11.5" Y="0.5" Width="1.5" />
+    <Position X="17.25" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgAAEACAAAQQAAAAAAAAAAEAAAAAAAAA=</HashCode>
       <FileName>Customer.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Bazar.BasicFood" BaseTypeListCollapsed="true">
-    <Position X="9.75" Y="0.5" Width="1.5" />
+    <Position X="7.25" Y="0.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAAAAAAEMAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Decorator\BasicFood.cs</FileName>
@@ -16,78 +23,88 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Bazar.DecoratorFoodCorn">
-    <Position X="4.75" Y="2" Width="1.5" />
+    <Position X="8.25" Y="3.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Decorator\DecoratorFoodCorn.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Bazar.DecoratorFoodFries">
-    <Position X="7.25" Y="1.75" Width="1.5" />
+    <Position X="0.5" Y="3.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Decorator\DecoratorFoodFries.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Bazar.DecoratorFoodRawSauce">
-    <Position X="0.5" Y="1.75" Width="1.5" />
+    <Position X="3" Y="3.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Decorator\DecoratorFoodRawSauce.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Bazar.DecoratorFoodRice">
-    <Position X="2.25" Y="2.25" Width="1.5" />
+    <Position X="5.75" Y="3.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Decorator\DecoratorFoodRice.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Bazar.FoodDecorator">
-    <Position X="1.25" Y="5.25" Width="1.5" />
+    <Position X="4.5" Y="0.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAABAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Decorator\FoodDecorator.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
+  <Class Name="Bazar.GUIBazar">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GUIBazar.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="Bazar.Output">
-    <Position X="11.75" Y="3.25" Width="1.5" />
+    <Position X="8.25" Y="5.5" Width="2" />
     <TypeIdentifier>
       <HashCode>EAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>Output.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Bazar.Program">
-    <Position X="5.75" Y="0.5" Width="1.5" />
+    <Position X="13.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAEAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Bazar" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Bazar.ItemFactory">
-    <Position X="13.75" Y="0.5" Width="3" />
+    <Position X="10.5" Y="6" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAABAAAAAAAAgAEAAIAAAAAAAAAAACAAAIAAAAE=</HashCode>
       <FileName>Shop\ItemFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Bazar.Shop">
-    <Position X="3.25" Y="4.75" Width="1.5" />
+    <Position X="20" Y="0.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AQQAAAAwAoAAwQAAQgABAQQAgAAIQAAABAAAAAAAAgA=</HashCode>
       <FileName>Shop\Shop.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Bazar.StaticData">
-    <Position X="7.5" Y="5.25" Width="1.5" />
+    <Position X="17.25" Y="6.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAABAgAAAAAAAAAAAACAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <HashCode>AAEACAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAACAAAAAA=</HashCode>
       <FileName>StaticData.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="Bazar.IFood">
-    <Position X="9.75" Y="3.75" Width="1.5" />
+    <Position X="5.75" Y="5.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Decorator\IFood.cs</FileName>
