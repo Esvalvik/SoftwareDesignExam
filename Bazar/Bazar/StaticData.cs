@@ -11,7 +11,7 @@
             {"Deluxe Kebab", "Rælingen Pizza", "Svingen", "Rema 1000", "GSport"};
 
         // Items
-        public static readonly string[] StemNames = {"Chicken", "Lam", "Steak", "Pork"};
+        public static readonly string[] ItemNames = {"Chicken", "Lam", "Steak", "Pork"};
 
         public static readonly float[] ItemPrices = {30f, 23f, 100f, 45f};
     }
