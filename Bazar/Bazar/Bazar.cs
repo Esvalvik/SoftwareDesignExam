@@ -29,7 +29,7 @@ namespace Bazar
 
         private readonly long _updateDelayInMillis = 100;
         private readonly int _amountCustomers = 5;
-        private readonly int _amountShops = 5;
+        private readonly int _amountShops = 3;
         private readonly bool _bazaarRunning = true;
 
         #endregion
@@ -41,12 +41,11 @@ namespace Bazar
         /// </summary>
         public void Init()
         {
-            for (var i = 0; i < _amountShops; i++)
-                _shops.Add(new Shop(i, StaticData.ShopNames[_rnd.Next(0, StaticData.ShopNames.Length - 1)]));
+            for (int i = 0; i < _amountShops; i++)
+                _shops.Add(new Shop(i, StaticData.ShopNames[i]));
 
-            for (var i = 0; i < _amountCustomers; i++)
-                _customers.Add(new Customer(i,
-                    StaticData.CustomerNames[_rnd.Next(0, StaticData.CustomerNames.Length - 1)]));
+            for (int i = 0; i < _amountCustomers; i++)
+                _customers.Add(new Customer(i, StaticData.CustomerNames[i]));
 
             _stopwatch.Start();
             Update();

@@ -59,9 +59,6 @@
     <Compile Include="Decorator\DecoratorFoodCorn.cs" />
     <Compile Include="Decorator\FoodDecorator.cs" />
     <Compile Include="Decorator\IFood.cs" />
-    <Compile Include="GUIBazar.xaml.cs">
-      <DependentUpon>GUIBazar.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Shop\ItemFactory.cs" />
     <Compile Include="Output.cs" />
     <Compile Include="Program.cs" />
@@ -72,12 +69,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="ClassDiagram1.cd" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="GUIBazar.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
