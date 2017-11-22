@@ -82,8 +82,8 @@ namespace Bazar
         /// <returns></returns>
         public static IFood GetRandomDecoratedFood()
         {
-            var randomIndex = _random.Next(0, StaticData.StemNames.Length - 1);
-            var name = StaticData.StemNames[randomIndex];
+            var randomIndex = _random.Next(0, StaticData.ItemNames.Length - 1);
+            var name = StaticData.ItemNames[randomIndex];
             var price = StaticData.ItemPrices[randomIndex];
             IFood originalFood = new BasicFood(name, price);
 

@@ -96,8 +96,9 @@ namespace Bazar
 
             foreach (Shop shop in _shops)
             {
-                var thread = new Thread(delegate() { MakeTransaction(customer, shop); });
-                thread.Start();
+				//var thread = new Thread(delegate() { MakeTransaction(customer, shop); });
+				//thread.Start();
+				MakeTransaction(customer, shop);
             }
         }
 

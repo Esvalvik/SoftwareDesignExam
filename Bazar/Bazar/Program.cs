@@ -4,13 +4,7 @@ namespace Bazar
 {
     internal class Program
     {
-        public Bazar Bazar
-        {
-            get => default(Bazar.Bazar);
-            set
-            {
-            }
-        }
+		//private Bazar bazar;
 
         private static void Main(string[] args)
         {
