@@ -3,21 +3,34 @@ using System.Collections;
 
 namespace Bazar
 {
-    internal class Shop
+    public class Shop
     {
-        #region Constructors
 
-        /*public Shop()
-        {
-            ID = 0;
-            Name = "Unnamed";
-            _availableItems = new ArrayList();
-            _dateTime = new DateTime(1970, 1, 1);
-            _rnd = new Random();;
-            UpdateTime();
-        }
-        */
-        public Shop(int id, string name)
+		#region Fields
+
+		public int ID { get; }
+
+		public string Name { get; }
+
+		private readonly int MIN_VALUE = 1000;
+		private readonly int MAX_VALUE = 5000;
+		private readonly int MAX_ITEMS = 5;
+		private int _createdItemsCount;
+
+		private readonly ArrayList _availableItems;
+
+		private DateTime _dateTime;
+		private readonly Random _rnd;
+		private readonly Output _out;
+
+		private double _lastTime;
+		private long _itemCreationDelay;
+
+		#endregion
+
+		#region Constructors
+
+		public Shop(int id, string name)
         {
             ID = id;
             Name = name;
@@ -30,35 +43,13 @@ namespace Bazar
 
         #endregion
 
-        #region Fields
-
-        public int ID { get; }
-
-        public string Name { get; }
-
-        private readonly int MIN_VALUE = 1000;
-        private readonly int MAX_VALUE = 5000;
-        private readonly int MAX_ITEMS = 5;
-        private int _createdItemsCount;
-
-        private readonly ArrayList _availableItems;
-
-        private DateTime _dateTime;
-        private readonly Random _rnd;
-        private readonly Output _out;
-
-        private double _lastTime;
-        private long _itemCreationDelay;
-
-        #endregion
-
         #region Methods
 
         /// <summary>
         ///     Adds given item to the available array
         /// </summary>
         /// <param name="item"></param>
-        private void AddItem(IFood item)
+        public void AddItem(IFood item)
         {
             _availableItems.Add(item);
             _out.Write(Name + " put " + item.GetDescription() + " up for sale!");
@@ -125,6 +116,11 @@ namespace Bazar
         {
             return DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
         }
+
+		public int GetAvailableItemsCount()
+		{
+			return _availableItems.Count;
+		}
 
         #endregion
     }

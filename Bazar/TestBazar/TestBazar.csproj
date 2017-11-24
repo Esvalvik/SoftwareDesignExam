@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="TestItemFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestShop.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bazar\Bazar.csproj">
