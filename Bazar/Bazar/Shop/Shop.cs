@@ -68,15 +68,6 @@ namespace Bazar
         }
 
         /// <summary>
-        ///     Returns an array of available items
-        /// </summary>
-        /// <returns></returns>
-        public IFood[] GetAvailableItems()
-        {
-            return (IFood[]) _availableItems.ToArray();
-        }
-
-        /// <summary>
         ///     Returns whether their are items for sale or not
         /// </summary>
         /// <returns></returns>
