@@ -1,10 +1,11 @@
 ﻿using System;
 
-namespace Bazar
+namespace Bazaar
 {
     public class ItemFactory
     {
         private static readonly Random _random;
+		private const int _maxDecorations = 5;
 
         static ItemFactory()
         {
@@ -87,7 +88,7 @@ namespace Bazar
             var price = StaticData.ItemPrices[randomIndex];
             IFood originalFood = new BasicFood(name, price);
 
-            for (var i = 0; i < _random.Next(0, 5); i++)
+            for (var i = 0; i < _random.Next(0, _maxDecorations); i++)
             {
                 var randomDecoratorIndex = _random.Next(0, 3);
                 switch (randomDecoratorIndex)
@@ -104,6 +105,9 @@ namespace Bazar
                     case 3:
                         originalFood = new DecoratorFoodRice(originalFood);
                         break;
+					default:
+						originalFood = new DecoratorFoodCorn(originalFood);
+						break;
                 }
             }
             return originalFood;

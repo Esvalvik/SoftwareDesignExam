@@ -4,11 +4,28 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 
-namespace Bazar
+namespace Bazaar
 {
-    public class Bazar
+    public class Bazaar
     {
-        public Bazar()
+
+		#region Fields
+
+		private readonly object _lock;
+		private readonly Output _out;
+		private readonly ArrayList _shops;
+		private readonly ArrayList _customers;
+		private readonly Stopwatch _stopwatch;
+		private readonly Random _rnd;
+
+		private readonly long _updateDelayInMillis = 100;
+		private readonly int _amountCustomers = 5;
+		private readonly int _amountShops = 3;
+		private readonly bool _bazaarRunning = true;
+
+		#endregion
+
+		public Bazaar()
         {
             _out = Output.GetInstance();
             _shops = new ArrayList();
@@ -18,22 +35,6 @@ namespace Bazar
             _rnd = new Random();
         }
 
-        #region Fields
-
-        private readonly object _lock;
-        private readonly Output _out;
-        private readonly ArrayList _shops;
-        private readonly ArrayList _customers;
-        private readonly Stopwatch _stopwatch;
-        private readonly Random _rnd;
-
-        private readonly long _updateDelayInMillis = 100;
-        private readonly int _amountCustomers = 5;
-        private readonly int _amountShops = 3;
-        private readonly bool _bazaarRunning = true;
-
-        #endregion
-
         #region Methods
 
         /// <summary>
@@ -41,11 +42,15 @@ namespace Bazar
         /// </summary>
         public void Init()
         {
-            for (int i = 0; i < _amountShops; i++)
-                _shops.Add(new Shop(i, StaticData.ShopNames[i]));
+			for(int i = 0; i < _amountShops; i++)
+			{
+				_shops.Add(new Shop(i, StaticData.ShopNames[i]));
+			}
 
-            for (int i = 0; i < _amountCustomers; i++)
-                _customers.Add(new Customer(i, StaticData.CustomerNames[i]));
+			for(int i = 0; i < _amountCustomers; i++)
+			{
+				_customers.Add(new Customer(i, StaticData.CustomerNames[i]));
+			}
 
             _stopwatch.Start();
             Update();
@@ -58,7 +63,10 @@ namespace Bazar
         {
             while (_bazaarRunning)
             {
-                if (_stopwatch.ElapsedMilliseconds < _updateDelayInMillis) continue;
+				if(_stopwatch.ElapsedMilliseconds < _updateDelayInMillis)
+				{
+					continue;
+				}
 
                 //Add items
                 foreach (Shop shop in _shops)
@@ -79,8 +87,10 @@ namespace Bazar
 
                 // Shuffle the thread array before starting threads
                 customerThreads = customerThreads.OrderBy(x => _rnd.Next()).ToArray();
-                foreach (var thread in customerThreads)
-                    thread.Start();
+				foreach(var thread in customerThreads)
+				{
+					thread.Start();
+				}
                 _stopwatch.Restart();
             }
         }
@@ -91,13 +101,13 @@ namespace Bazar
         /// <param name="customer"></param>
         private void CustomerSearchForFood(Customer customer)
         {
-            if (customer == null)
-                return;
+			if(customer == null)
+			{
+				return;
+			}
 
             foreach (Shop shop in _shops)
             {
-				//var thread = new Thread(delegate() { MakeTransaction(customer, shop); });
-				//thread.Start();
 				MakeTransaction(customer, shop);
             }
         }
@@ -111,9 +121,11 @@ namespace Bazar
         {
             lock (_lock)
             {
-                // If no items for sale, we leave
-                if (!shop.HasItemsForSale())
-                    return;
+				// If no items for sale, we leave
+				if(!shop.HasItemsForSale())
+				{
+					return;
+				}
 
                 var soldItem = shop.SellItem(0);
                 customer.ReceiveItem(soldItem);

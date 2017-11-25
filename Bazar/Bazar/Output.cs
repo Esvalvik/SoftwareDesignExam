@@ -1,14 +1,10 @@
 ﻿using System;
 
-namespace Bazar
+namespace Bazaar
 {
     public class Output
     {
         private static Output _outPut;
-
-        private Output()
-        {
-        }
 
         /// <summary>
         ///     Returns the instance of Output, creates a new instance if an instance doesn't exist
@@ -16,8 +12,10 @@ namespace Bazar
         /// <returns></returns>
         public static Output GetInstance()
         {
-            if (_outPut == null)
-                _outPut = new Output();
+			if(_outPut == null)
+			{
+				_outPut = new Output();
+			}
 
             return _outPut;
         }
@@ -28,8 +26,10 @@ namespace Bazar
         /// <param name="text"></param>
         public void Write(string text)
         {
-            if (text == null) return;
-            Console.WriteLine(text);
+			if(text != null)
+			{
+				Console.WriteLine(text);
+			}
         }
     }
 }

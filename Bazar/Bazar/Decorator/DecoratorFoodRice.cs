@@ -1,4 +1,4 @@
-﻿namespace Bazar
+﻿namespace Bazaar
 {
     internal class DecoratorFoodRice : FoodDecorator
     {

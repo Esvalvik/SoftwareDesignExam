@@ -1,6 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
-using Bazar;
+using Bazaar;
 
 namespace TestBazar
 {

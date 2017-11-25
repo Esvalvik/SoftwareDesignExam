@@ -50,7 +50,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bazar.cs" />
+    <Compile Include="Bazaar.cs" />
     <Compile Include="Decorator\BasicFood.cs" />
     <Compile Include="Decorator\DecoratorFoodFries.cs" />
     <Compile Include="Decorator\DecoratorFoodRawSauce.cs" />

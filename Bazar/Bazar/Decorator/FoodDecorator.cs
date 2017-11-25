@@ -1,4 +1,4 @@
-﻿namespace Bazar
+﻿namespace Bazaar
 {
     internal abstract class FoodDecorator : IFood
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 
-namespace Bazar
+namespace Bazaar
 {
     public class Shop
     {
@@ -28,8 +28,6 @@ namespace Bazar
 
 		#endregion
 
-		#region Constructors
-
 		public Shop(int id, string name)
         {
             ID = id;
@@ -40,8 +38,6 @@ namespace Bazar
             _out = Output.GetInstance();
             UpdateTime();
         }
-
-        #endregion
 
         #region Methods
 
@@ -81,13 +77,15 @@ namespace Bazar
         /// </summary>
         public void Update()
         {
-            if (_createdItemsCount < MAX_ITEMS)
-                if (GetTimeInMillis() - _lastTime >= _itemCreationDelay)
-                {
-                    AddItem(ItemFactory.GetRandomDecoratedFood());
-                    _createdItemsCount++;
-                    UpdateTime();
-                }
+			if(_createdItemsCount < MAX_ITEMS)
+			{
+				if(GetTimeInMillis() - _lastTime >= _itemCreationDelay)
+				{
+					AddItem(ItemFactory.GetRandomDecoratedFood());
+					_createdItemsCount++;
+					UpdateTime();
+				}
+			}
         }
 
         /// <summary>

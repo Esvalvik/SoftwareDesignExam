@@ -1,43 +1,33 @@
 ﻿using System.Collections.Generic;
 
-namespace Bazar
+namespace Bazaar
 {
     internal class Customer
     {
-        #region Constructors
 
-        /* public Customer()
-        {
-            ID = 0;
-            Name = "Unnamed";
-            OwnedItemsList = new List<IFood>();
-        }
-        */
-        public Customer(int id, string name)
+		#region Properties
+
+		public int ID { get; private set; }
+		public string Name { get; private set; }
+
+		public List<IFood> OwnedItemsList { get; set; }
+
+		#endregion
+
+		public Customer(int id, string name)
         {
             ID = id;
             Name = name;
             OwnedItemsList = new List<IFood>();
         }
 
-        #endregion
+		#region Methods
 
-        #region Properties
-
-        public int ID { get; }
-        public string Name { get; }
-
-        public List<IFood> OwnedItemsList { get; set; }
-
-        #endregion
-
-        #region Methods
-
-        /// <summary>
-        ///     Returns an array with the customers purchased items
-        /// </summary>
-        /// <returns></returns>
-        public IFood[] FetchItems()
+		/// <summary>
+		///     Returns an array with the customers purchased items
+		/// </summary>
+		/// <returns></returns>
+		public IFood[] FetchItems()
         {
             return OwnedItemsList.ToArray();
         }
@@ -48,8 +38,10 @@ namespace Bazar
         /// <param name="basicfood"></param>
         public void ReceiveItem(IFood basicfood)
         {
-            if (basicfood == null) return;
-            OwnedItemsList.Add(basicfood);
+			if(basicfood != null)
+			{
+				OwnedItemsList.Add(basicfood);
+			}
         }
 
         /// <summary>
@@ -60,7 +52,6 @@ namespace Bazar
         {
             return ID + ":" + Name;
         }
-
         #endregion
     }
 }

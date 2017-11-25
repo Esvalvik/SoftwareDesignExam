@@ -1,8 +1,8 @@
-﻿namespace Bazar
+﻿namespace Bazaar
 {
     internal class DecoratorFoodCorn : FoodDecorator
     {
-        public DecoratorFoodCorn(IFood iFoodOriginal) : base(iFoodOriginal)
+		public DecoratorFoodCorn(IFood iFoodOriginal) : base(iFoodOriginal)
         {
         }
 

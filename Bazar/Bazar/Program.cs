@@ -1,14 +1,13 @@
 ﻿using System;
 
-namespace Bazar
+namespace Bazaar
 {
     internal class Program
     {
-		//private Bazar bazar;
 
         private static void Main(string[] args)
         {
-            var bazar = new Bazar();
+            var bazar = new Bazaar();
             bazar.Init();
 
             Console.ReadKey();

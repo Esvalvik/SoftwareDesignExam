@@ -1,4 +1,4 @@
-﻿namespace Bazar
+﻿namespace Bazaar
 {
     public class BasicFood : IFood
     {
