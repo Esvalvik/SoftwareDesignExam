@@ -51,9 +51,9 @@
     <Compile Include="TestShop.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Bazar\Bazar.csproj">
+    <ProjectReference Include="..\Bazar\Bazaar.csproj">
       <Project>{78e319ad-6fd9-4a59-89e0-86dc7a5a9d89}</Project>
-      <Name>Bazar</Name>
+      <Name>Bazaar</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
