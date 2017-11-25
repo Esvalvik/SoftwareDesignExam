@@ -108,7 +108,10 @@ namespace Bazaar
 
             foreach (Shop shop in _shops)
             {
-				MakeTransaction(customer, shop);
+				if(MakeTransaction(customer, shop))
+				{
+					break;
+				}
             }
         }
 
@@ -117,20 +120,21 @@ namespace Bazaar
         /// </summary>
         /// <param name="customer"></param>
         /// <param name="shop"></param>
-        private void MakeTransaction(Customer customer, Shop shop)
+        private bool MakeTransaction(Customer customer, Shop shop)
         {
             lock (_lock)
             {
 				// If no items for sale, we leave
 				if(!shop.HasItemsForSale())
 				{
-					return;
+					return false;
 				}
 
                 var soldItem = shop.SellItem(0);
                 customer.ReceiveItem(soldItem);
                 _out.Write("\t" + customer.Name + " has bought " + soldItem.GetDescription() + " for " +
                            soldItem.GetPrice() + "kr. From " + shop.Name);
+				return true;
             }
         }
 
